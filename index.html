@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Phone-Number-Auth</title>
+        <link rel="stylesheet" href="./css/reset.css" />
+        <link rel="stylesheet" href="./css/style.css" />
+    </head>
+    <body>
+        <div class="test">Phone-Number-Auth</div>
+
+        <form action="" >
+            <input type="text" name="" id="number" placeholder="090.....">
+            <div id="recaptha-container"></div>
+            <button type="button" onclick="phoneAuth();">コードを送る</button>
+        </form><br>
+
+        <h1>コードを入力してください</h1>
+        <form action="">
+            <input type="text" id="verificationCode" placeholder="コードを入力してください">
+            <button type="button" onclick="codeVerify();">コードを認証する</button>
+        </form>
+
+
+
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
+        <!-- 下記2行追記 -->
+        <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-database.js"></script>
+
+        <!-- firebaseの設定を読み込み -->
+        <script src="../env/env_firebase-Phone-Number-Auth/env.js"></script>
+
+        <script>
+            // Your web app's Firebase configuration
+            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+            var firebaseConfig = envFirebaseConfig; //envFirebaseConfigは別ディレクトリにあるFirebase用のIDなどの情報の変数
+
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+        </script>
+
+        <!-- jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="js/firebase.js"></script>
+        <script src="js/app.js"></script>
+    </body>
+</html>

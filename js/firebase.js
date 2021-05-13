@@ -18,8 +18,8 @@ function phoneAuth() {
     var number = document.getElementById("number").value;
     // console.log(window.recaptchaVerifier);
 
-    trimNonNumber(number.toString());
-
+    number = trimNonNumber(number.toString());
+    // console.log(a);
     //firebaseのauth機能で認証処理
     firebase
         .auth()
@@ -53,21 +53,26 @@ function codeVerify() {
 }
 
 function trimNonNumber(number) {
-    let resultNumber;
+    console.log(number.substring(1));
+
+    let resultNumber = "";
     let phoneHead = number.toString().substring(0, 1);
     // ハイフンを取り除く
     // スペースを取り除く
     // 先頭の0を削って国債番号を取り付ける
-
+    // console.log(phoneHead);
     // 半角スペースまたは半角ハイフンを削除
+    console.log("phoneHead ", phoneHead);
+
     if (/\s|-/.test(number)) {
         resultNumber = number.split(/\s|-/).join("");
     }
-
     if (phoneHead == "0") {
-        let num = resultNumber.toString().substring(1);
+        let num = resultNumber.substring(1);
+        console.log(resultNumber);
+        console.log(num);
         //日本の国債番号をつける必要がある
-        resultNumber = `+81${num}`;
+        resultNumber = `+81${number.substring(1)}`;
     }
 
     console.log(resultNumber);

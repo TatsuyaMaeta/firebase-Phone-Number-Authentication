@@ -53,7 +53,7 @@ function codeVerify() {
 }
 
 function trimNonNumber(number) {
-    console.log(number.substring(1));
+    // console.log(number.substring(1));
 
     let resultNumber = "";
     let phoneHead = number.toString().substring(0, 1);
@@ -69,13 +69,11 @@ function trimNonNumber(number) {
     }
     if (phoneHead == "0") {
         let num = resultNumber.substring(1);
-        console.log(resultNumber);
-        console.log(num);
         //日本の国債番号をつける必要がある
         resultNumber = `+81${number.substring(1)}`;
     }
 
-    console.log(resultNumber);
+    // console.log(resultNumber);
 
     return resultNumber;
 }

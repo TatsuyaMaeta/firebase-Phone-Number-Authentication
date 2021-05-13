@@ -10,6 +10,12 @@ function render() {
         "recaptha-container"
     );
 
+
+
+
+
+
+    
     recaptchaVerifier.render();
 }
 
